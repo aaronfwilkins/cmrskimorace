@@ -1,0 +1,58 @@
+:root{--navy:#12233f;--ink:#1b2430;--muted:#5b6675;--snow:#f5f7fa;--line:#dfe4ea;--red:#d8232a;--white:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Avenir Next","Segoe UI",Helvetica,Arial,sans-serif;color:var(--ink);background:var(--white);line-height:1.65;font-size:17px}
+img{max-width:100%;height:auto}
+a{color:var(--red)}
+a:hover{color:var(--navy)}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+header.site{background:var(--navy);position:sticky;top:0;z-index:10}
+header.site .bar{max-width:1100px;margin:0 auto;padding:14px 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 24px}
+.brand{color:var(--white);font-weight:800;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;font-size:1.05rem}
+.brand span{color:var(--red)}
+nav a{color:#cfd8e6;text-decoration:none;margin-left:22px;font-size:.95rem;font-weight:600;padding:4px 0;border-bottom:2px solid transparent}
+nav a:first-child{margin-left:0}
+nav a:hover,nav a[aria-current=page]{color:var(--white);border-bottom-color:var(--red)}
+.hero{background:linear-gradient(rgba(18,35,63,.55),rgba(18,35,63,.7)),url(images/barnaby-ridge.jpg) center/cover no-repeat;color:var(--white);text-align:center;padding:110px 20px 120px}
+.hero h1{font-size:clamp(2.4rem,7vw,4.6rem);margin:0;letter-spacing:.04em;text-transform:uppercase;line-height:1.05}
+.hero p{font-size:clamp(1.05rem,2.4vw,1.4rem);margin:18px 0 0}
+.hero .tag{display:inline-block;margin-top:26px;padding:8px 16px;border:1px solid rgba(255,255,255,.6);border-radius:999px;font-size:.9rem;letter-spacing:.06em;text-transform:uppercase}
+.pagehead{background:var(--navy);color:var(--white);padding:54px 0 46px}
+.pagehead h1{margin:0;font-size:clamp(2rem,5vw,3rem);text-transform:uppercase;letter-spacing:.04em}
+.pagehead p{margin:10px 0 0;color:#cfd8e6;max-width:640px}
+main section{padding:46px 0;border-bottom:1px solid var(--line)}
+main section:last-child{border-bottom:0}
+main section.alt{background:var(--snow)}
+h2{font-size:1.7rem;margin:0 0 14px;color:var(--navy);line-height:1.2}
+h3{font-size:1.05rem;margin:26px 0 8px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+ul,ol{padding-left:22px;margin:8px 0}
+li{margin:4px 0}
+.note{background:#fff7e0;border-left:4px solid #e0a800;padding:12px 16px;margin:0 0 8px;font-size:.95rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:20px}
+.card{background:var(--white);border:1px solid var(--line);border-top:4px solid var(--red);border-radius:6px;padding:20px}
+.card .day{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+.card h3{margin:4px 0 8px;font-size:1.3rem;text-transform:none;letter-spacing:0;color:var(--navy)}
+.card p{margin:0;font-size:.95rem}
+.stat{font-size:1.5rem;font-weight:800;color:var(--navy)}
+.btn{display:inline-block;background:var(--red);color:var(--white);text-decoration:none;font-weight:700;padding:12px 22px;border-radius:4px;margin-top:14px}
+.btn:hover{background:var(--navy);color:var(--white)}
+.btn.ghost{background:transparent;color:var(--navy);border:2px solid var(--navy)}
+.btn.ghost:hover{background:var(--navy);color:var(--white)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px 40px}
+.logos{display:flex;flex-wrap:wrap;align-items:center;gap:28px 44px;margin-top:18px}
+.logos img{max-height:70px;width:auto}
+.sponsor{display:flex;flex-wrap:wrap;align-items:center;gap:20px 32px;padding:22px 0;border-bottom:1px solid var(--line)}
+.sponsor:last-child{border-bottom:0}
+.sponsor .logo{flex:0 0 240px;display:flex;align-items:center}
+.sponsor .logo img{max-height:96px;max-width:240px;width:auto}
+.sponsor .role{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+.sponsor h3{margin:2px 0 0;font-size:1.25rem;text-transform:none;letter-spacing:0;color:var(--navy)}
+figure{margin:22px 0}
+figure img{border:1px solid var(--line);border-radius:4px;display:block}
+figcaption{font-size:.9rem;color:var(--muted);margin-top:6px}
+.qr{width:220px;border:1px solid var(--line);padding:10px;background:var(--white);border-radius:6px}
+footer.site{background:var(--navy);color:#cfd8e6;padding:34px 0;font-size:.9rem;text-align:center}
+footer.site a{color:var(--white)}
+footer.site p{margin:4px 0}
+@media (max-width:640px){body{font-size:16px}nav a{margin-left:0;margin-right:16px}.hero{padding:70px 20px 80px}.sponsor .logo{flex-basis:100%}}
+h2[id]{scroll-margin-top:76px}
