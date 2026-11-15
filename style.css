@@ -119,4 +119,3 @@ h3[id]{scroll-margin-top:90px}
 .accordion details{scroll-margin-top:84px}
 .link-btn{background:none;border:0;padding:0;color:var(--red);font:inherit;font-weight:600;text-decoration:underline;cursor:pointer}
 .link-btn:hover{color:var(--navy)}
-footer.site .footer-note{font-size:.78rem;opacity:.75;margin-top:10px}
