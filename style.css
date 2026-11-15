@@ -90,3 +90,5 @@ nav a{white-space:nowrap}
 .map-label-left span{transform:translate(calc(-100% - 10px),-50%)}
 /* Google Forms cannot report their height, so cap the box at about one screen and let the form scroll inside it */
 .volunteer-form{height:80vh;min-height:560px;max-height:1000px}
+.logo-tile{display:inline-flex;align-items:center;justify-content:center;background:var(--navy);border-radius:8px;padding:12px}
+.sponsor .logo .logo-tile img{max-height:76px;width:auto}
