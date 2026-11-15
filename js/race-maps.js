@@ -41,10 +41,11 @@
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     });
     var topo = L.tileLayer("https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png", {
-      maxZoom: 17,
+      maxNativeZoom: 17,
+      maxZoom: 19,
       attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, SRTM | Style &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (CC-BY-SA)'
     });
-    osm.addTo(map);
+    topo.addTo(map); // topo (contour lines) is the default view; "Map" switches to standard OpenStreetMap
 
     var runsLayer = L.geoJSON(null, {
       style: runStyle,
