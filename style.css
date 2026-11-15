@@ -92,3 +92,7 @@ nav a{white-space:nowrap}
 .volunteer-form{height:80vh;min-height:560px;max-height:1000px}
 .logo-tile{display:inline-flex;align-items:center;justify-content:center;background:var(--navy);border-radius:8px;padding:12px}
 .sponsor .logo .logo-tile img{max-height:76px;width:auto}
+.sponsor h3 a{color:inherit;text-decoration:none}
+.sponsor h3 a:hover{color:var(--red);text-decoration:underline}
+.logos a{display:inline-flex;align-items:center}
+.logos a:hover img,.sponsor .logo a:hover img{opacity:.8}
