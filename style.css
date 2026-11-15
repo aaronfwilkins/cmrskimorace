@@ -88,3 +88,5 @@ nav a{white-space:nowrap}
 .map-legend .rec{border-color:#f28c00}
 @media (min-width:901px){.race-media{position:sticky;top:84px}}
 .map-label-left span{transform:translate(calc(-100% - 10px),-50%)}
+/* Google Forms cannot report their height, so cap the box at about one screen and let the form scroll inside it */
+.volunteer-form{height:80vh;min-height:560px;max-height:1000px}
