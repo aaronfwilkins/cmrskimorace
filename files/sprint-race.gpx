@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="cmrskimorace.ca" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>CMR Skimo Race: Sprint</name><desc>Approximate route for information and planning only. The race-day course is set by the flagging on the snow and may change at any time for snow, weather, avalanche conditions or resort operations. Follow the course flagging and race officials. Do not rely on this track to navigate. cmrskimorace.ca</desc></metadata>
+<trk><name>CMR Skimo Race: Sprint</name><trkseg>
+<trkpt lat="49.318055" lon="-114.415237"></trkpt>
+<trkpt lat="49.317897" lon="-114.415747"></trkpt>
+<trkpt lat="49.317698" lon="-114.416251"></trkpt>
+<trkpt lat="49.317516" lon="-114.416712"></trkpt>
+<trkpt lat="49.317313" lon="-114.417211"></trkpt>
+<trkpt lat="49.31716" lon="-114.417571"></trkpt>
+<trkpt lat="49.317055" lon="-114.417812"></trkpt>
+<trkpt lat="49.31689" lon="-114.417748"></trkpt>
+<trkpt lat="49.316908" lon="-114.417517"></trkpt>
+<trkpt lat="49.317163" lon="-114.416906"></trkpt>
+<trkpt lat="49.317383" lon="-114.41638"></trkpt>
+<trkpt lat="49.317611" lon="-114.415827"></trkpt>
+<trkpt lat="49.317813" lon="-114.415334"></trkpt>
+<trkpt lat="49.317915" lon="-114.414948"></trkpt>
+<trkpt lat="49.318002" lon="-114.414878"></trkpt>
+<trkpt lat="49.31809" lon="-114.41498"></trkpt>
+<trkpt lat="49.318065" lon="-114.415184"></trkpt>
+</trkseg></trk>
+</gpx>

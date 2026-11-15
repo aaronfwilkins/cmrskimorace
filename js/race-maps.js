@@ -67,12 +67,19 @@
         var coords = data.features[0].geometry.coordinates.map(function (c) { return [c[1], c[0]]; });
         L.polyline(coords, { color: "#ffffff", weight: 9, opacity: 0.9 }).addTo(map);
         var route = L.polyline(coords, { color: "#d8232a", weight: 5 }).addTo(map);
-        L.circleMarker(coords[0], { radius: 7, color: "#fff", weight: 2, fillColor: "#12233f", fillOpacity: 1 }).addTo(map);
-        L.circleMarker(coords[coords.length - 1], { radius: 7, color: "#fff", weight: 2, fillColor: "#d8232a", fillOpacity: 1 }).addTo(map);
-        L.marker(coords[0], { icon: label("Start"), interactive: false }).addTo(map);
-        L.marker(coords[coords.length - 1], { icon: label("Finish"), interactive: false }).addTo(map);
+        var start = coords[0], end = coords[coords.length - 1];
+        if (map.distance(start, end) < 40) {
+          // Loop course: one shared start and finish
+          L.circleMarker(start, { radius: 7, color: "#fff", weight: 2, fillColor: "#12233f", fillOpacity: 1 }).addTo(map);
+          L.marker(start, { icon: label("Start / Finish"), interactive: false }).addTo(map);
+        } else {
+          L.circleMarker(start, { radius: 7, color: "#fff", weight: 2, fillColor: "#12233f", fillOpacity: 1 }).addTo(map);
+          L.circleMarker(end, { radius: 7, color: "#fff", weight: 2, fillColor: "#d8232a", fillOpacity: 1 }).addTo(map);
+          L.marker(start, { icon: label("Start"), interactive: false }).addTo(map);
+          L.marker(end, { icon: label("Finish"), interactive: false }).addTo(map);
+        }
         map.invalidateSize();
-        map.fitBounds(route.getBounds(), { padding: [50, 50] });
+        map.fitBounds(route.getBounds(), { padding: [50, 50], maxZoom: 17 });
       })
       .catch(function (err) {
         if (window.console) console.error("Race map failed:", err);
