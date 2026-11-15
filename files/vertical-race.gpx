@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx version="1.1" creator="cmrskimorace.ca" xmlns="http://www.topografix.com/GPX/1/1">
-<metadata><name>CMR Skimo Race: Vertical</name></metadata>
+<metadata><name>CMR Skimo Race: Vertical</name><desc>Approximate route for information and planning only. The race-day course is set by the flagging on the snow and may change at any time for snow, weather, avalanche conditions or resort operations. Follow the course flagging and race officials. Do not rely on this track to navigate. cmrskimorace.ca</desc></metadata>
 <trk><name>CMR Skimo Race: Vertical</name><trkseg>
 <trkpt lat="49.318253" lon="-114.414859"><ele>1412</ele></trkpt>
 <trkpt lat="49.318002" lon="-114.415001"><ele>1413</ele></trkpt>

@@ -74,3 +74,8 @@ h2[id]{scroll-margin-top:76px}
 .map-label span{display:inline-block;transform:translate(10px,-50%);background:#fff;color:var(--navy);font-weight:700;font-size:12px;padding:2px 7px;border-radius:3px;box-shadow:0 1px 3px rgba(0,0,0,.3);white-space:nowrap}
 .leaflet-container{font:inherit;font-size:13px}
 @media (max-width:900px){.race-split{grid-template-columns:1fr}.race-map{height:360px}}
+.disclaimer{background:#fdf0f0;border-left:4px solid var(--red);padding:14px 18px;margin:12px 0 8px;font-size:.95rem}
+.disclaimer p{margin:0 0 6px}
+.disclaimer p:last-child{margin-bottom:0}
+.disclaimer-short{font-size:.88rem;color:var(--muted);margin:10px 0 0;padding-left:12px;border-left:3px solid var(--red)}
+#course-disclaimer{scroll-margin-top:90px}
