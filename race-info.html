@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Race Info | CMR Skimo Race</title>
 <meta name="description" content="Courses, schedule, divisions and required gear for the CMR Skimo Race.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" defer></script>
+<script src="js/race-maps.js" defer></script>
 </head>
 <body>
 <header class="site"><div class="bar">
@@ -18,10 +21,22 @@
 <p class="note">The 2027 race runs January 8 to 10. Start times, courses and the other details below follow the most recent edition and are subject to change, including on race day for weather and snow conditions.</p>
 <p>Three days of ski mountaineering racing: the Vertical on Friday, January 8, the Sprint on Saturday, January 9, and the Individual on Sunday, January 10, 2027. Race one, two or all three. All races follow ISMF sport regulations.</p>
 <h3>Divisions</h3><ul><li>Adult (18+): Competitive and Recreational</li><li>Junior (under 18)</li><li>Masters (35+)</li></ul><p><a href="#vertical">Vertical</a> &middot; <a href="#sprint">Sprint</a> &middot; <a href="#individual">Individual</a> &middot; <a href="#rules">On course</a> &middot; <a href="#maps">Course maps</a></p>
-</div></section><section class="alt"><div class="wrap">
+</div></section><section class="alt"><div class="wrap wide">
 <h2 id="vertical">Friday, January 8: Vertical Race</h2>
-<p>One climb, start to finish. <strong>556 m (1,830 ft)</strong> of elevation gain.</p>
-<div class="cols"><div><h3>Route</h3><ol><li>Start at Whiskey Jack</li><li>Follow Jelly Roll</li><li>Right into Easy Street</li><li>Trend up, under the T-Bar, and left towards South Bowl</li><li>Finish near the top of the T-Rex T-Bar</li></ol></div><div><h3>Schedule</h3><ul><li>3:30 to 3:45 pm: bag drop and start line instructions</li><li>4:00 pm: race start</li></ul><h3>Required gear</h3><p>Helmet. Pack warm clothing into a bag for pickup at the finish.</p></div></div>
+<div class="race-split">
+<div class="race-text">
+<p>One climb, start to finish. <strong>556 m (1,830 ft)</strong> of elevation gain over about <strong>1.5 km</strong>.</p>
+<h3>Route</h3><ol><li>Start at Whiskey Jack</li><li>Follow Jelly Roll</li><li>Right into Easy Street</li><li>Trend up, under the T-Bar, and left towards South Bowl</li><li>Finish near the top of the T-Rex T-Bar</li></ol>
+<h3>Schedule</h3><ul><li>3:30 to 3:45 pm: bag drop and start line instructions</li><li>4:00 pm: race start</li></ul>
+<h3>Required gear</h3><p>Helmet. Pack warm clothing into a bag for pickup at the finish.</p>
+<p><a class="btn ghost" href="files/vertical-race.gpx" download>Download the Vertical GPX</a></p>
+</div>
+<div class="race-media">
+<div class="race-map" data-track="files/vertical-track.geojson" role="region" aria-label="Interactive map of the Vertical race route"></div>
+<ul class="map-legend"><li><i class="route"></i>Race route</li><li><i class="easy"></i>Easy</li><li><i class="int"></i>Intermediate</li><li><i class="adv"></i>Advanced / expert</li><li><i class="lift"></i>Lifts</li></ul>
+<figure><a href="images/vertical-trail-map.webp"><img src="images/vertical-trail-map.webp" alt="Vertical race route drawn on the Castle Mountain Resort trail map, from the base to near the top of the T-Rex T-Bar" loading="lazy"></a><figcaption>The route on the resort trail map.</figcaption></figure>
+</div>
+</div>
 </div></section><section><div class="wrap">
 <h2 id="sprint">Saturday, January 9: Sprint Race</h2>
 <p>A short, fast course on Whiskey Jack with two uphill skinning sections, one boot-pack and one downhill slalom section. About <strong>45 m (150 ft)</strong> of gain and loss per lap, raced as qualifiers, heats and finals.</p>
