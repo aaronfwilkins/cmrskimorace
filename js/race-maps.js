@@ -106,3 +106,34 @@
 
   document.querySelectorAll(".race-map[data-track]").forEach(init);
 })();
+
+// Links like race-info.html#sprint: once the page (maps, images) has finished loading,
+// make sure the section is in view, since late layout can leave the browser at the top.
+window.addEventListener("load", function () {
+  var id = decodeURIComponent(location.hash.slice(1));
+  var target = id && document.getElementById(id);
+  if (target) {
+    target.scrollIntoView({ block: "start", behavior: "instant" });
+  }
+});
+
+// Rules accordion: "Expand all" / "Collapse all", and open a panel when a link targets it.
+(function () {
+  var btn = document.getElementById("toggle-rules");
+  var panels = document.querySelectorAll(".accordion details");
+  if (btn) btn.addEventListener("click", function () {
+    var open = btn.textContent === "Expand all";
+    panels.forEach(function (d) { d.open = open; });
+    btn.textContent = open ? "Collapse all" : "Expand all";
+  });
+  function goToHash() {
+    var id = decodeURIComponent(location.hash.slice(1));
+    var target = id && document.getElementById(id);
+    if (!target) return;
+    var d = target.closest("details");
+    if (d) d.open = true;
+    target.scrollIntoView({ block: "start", behavior: "instant" });
+  }
+  window.addEventListener("hashchange", goToHash);
+  goToHash();
+})();
