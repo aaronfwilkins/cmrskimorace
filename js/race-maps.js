@@ -27,8 +27,8 @@
     return { color: RUN_COLORS[p.difficulty] || RUN_COLORS.unrated, weight: 2.5, opacity: 0.8 };
   }
 
-  function label(text) {
-    return L.divIcon({ className: "map-label", html: "<span>" + text + "</span>", iconSize: null });
+  function label(text, left) {
+    return L.divIcon({ className: "map-label" + (left ? " map-label-left" : ""), html: "<span>" + text + "</span>", iconSize: null });
   }
 
   function init(el) {
@@ -53,7 +53,7 @@
       }
     }).addTo(map);
 
-    L.control.layers({ "Map": osm, "Topo": topo }, { "Ski runs and lifts": runsLayer }, { collapsed: true }).addTo(map);
+    var layersControl = L.control.layers({ "Map": osm, "Topo": topo }, { "Ski runs and lifts": runsLayer }, { collapsed: true }).addTo(map);
     L.control.scale({ imperial: false }).addTo(map);
 
     loadRuns().then(function (data) {
@@ -64,9 +64,23 @@
     fetch(el.getAttribute("data-track"))
       .then(function (r) { return r.json(); })
       .then(function (data) {
+        // One or more routes. Each feature may carry its own name and colour;
+        // earlier routes are drawn wider so a later route sharing the same trail stays visible on top.
+        var bounds = L.latLngBounds([]);
+        var multi = data.features.length > 1;
+        data.features.forEach(function (f, i) {
+          var pts = f.geometry.coordinates.map(function (c) { return [c[1], c[0]]; });
+          var w = multi ? Math.max(4, 8 - i * 3) : 5;
+          var line = L.polyline(pts, { color: f.properties.color || "#d8232a", weight: w });
+          var group = L.layerGroup([L.polyline(pts, { color: "#ffffff", weight: w + 4, opacity: 0.9 }), line]).addTo(map);
+          if (f.properties.name) {
+            line.bindTooltip(f.properties.name, { sticky: true });
+            if (multi) layersControl.addOverlay(group, f.properties.name + " course");
+          }
+          bounds.extend(line.getBounds());
+        });
         var coords = data.features[0].geometry.coordinates.map(function (c) { return [c[1], c[0]]; });
-        L.polyline(coords, { color: "#ffffff", weight: 9, opacity: 0.9 }).addTo(map);
-        var route = L.polyline(coords, { color: "#d8232a", weight: 5 }).addTo(map);
+        var route = { getBounds: function () { return bounds; } };
         var start = coords[0], end = coords[coords.length - 1];
         if (map.distance(start, end) < 40) {
           // Loop course: one shared start and finish
@@ -75,7 +89,8 @@
         } else {
           L.circleMarker(start, { radius: 7, color: "#fff", weight: 2, fillColor: "#12233f", fillOpacity: 1 }).addTo(map);
           L.circleMarker(end, { radius: 7, color: "#fff", weight: 2, fillColor: "#d8232a", fillOpacity: 1 }).addTo(map);
-          L.marker(start, { icon: label("Start"), interactive: false }).addTo(map);
+          // Start and finish close together: put the Start label on the left so the two do not overlap
+          L.marker(start, { icon: label("Start", map.distance(start, end) < 400), interactive: false }).addTo(map);
           L.marker(end, { icon: label("Finish"), interactive: false }).addTo(map);
         }
         map.invalidateSize();

@@ -85,3 +85,6 @@ nav a{white-space:nowrap}
 .btn-updated{font-size:.85rem;color:var(--muted);margin:-9px 0 0}
 .form-link{font-size:.9rem;color:var(--muted)}
 .volunteer-form{display:block;width:100%;max-width:640px;border:0;margin:16px 0 0;background:var(--white)}
+.map-legend .rec{border-color:#f28c00}
+@media (min-width:901px){.race-media{position:sticky;top:84px}}
+.map-label-left span{transform:translate(calc(-100% - 10px),-50%)}
