@@ -83,3 +83,5 @@ nav a{white-space:nowrap}
 @media (max-width:640px){header.site .bar{row-gap:6px}nav{display:flex;width:100%;justify-content:space-between;gap:8px;overflow-x:auto;scrollbar-width:none}nav::-webkit-scrollbar{display:none}nav a{margin:0;font-size:.85rem}}
 @media (max-width:360px){nav{gap:6px}nav a{font-size:.78rem}}
 .btn-updated{font-size:.85rem;color:var(--muted);margin:-9px 0 0}
+.form-link{font-size:.9rem;color:var(--muted)}
+.volunteer-form{display:block;width:100%;max-width:640px;border:0;margin:16px 0 0;background:var(--white)}
